@@ -1,5 +1,11 @@
+module Destructable
+  def destroy
+    puts "Destroying this object!!"
+  end
+end
+
 class User
-  
+  include Destructable
   attr_accessor :name
   def initialize(name)
     @name = name
@@ -35,3 +41,4 @@ user.name = "Alwar"
 puts user.name
 puts "hey buddy"
 User.identify
+user.destroy
